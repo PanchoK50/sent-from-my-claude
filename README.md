@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="sent-from-my-claude: Drafted by Claude. Sent by you. Every single one." width="100%">
+<img src="assets/banner.svg" alt="sent-from-my-claude: Drafted by Claude. Sent by you." width="100%">
 
 [![GitHub stars](https://img.shields.io/github/stars/PanchoK50/sent-from-my-claude?style=social)](https://github.com/PanchoK50/sent-from-my-claude/stargazers)
 

@@ -14,13 +14,13 @@
   <text x="148" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="54" font-weight="700" fill="#F0EDE6">sent-from-my-claude</text>
 
   <!-- tagline -->
-  <text x="72" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="27" font-weight="600" fill="#D97757">Drafted by Claude. Sent by you. Every single one.</text>
+  <text x="72" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="27" font-weight="600" fill="#D97757">Drafted by Claude. Sent by you.</text>
 
   <!-- joke line -->
-  <text x="72" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-style="italic" fill="#A8A29A">Like "sent from my iPhone", except Claude isn't allowed to press send.</text>
+  <text x="72" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-style="italic" fill="#A8A29A">Like "sent from my iPhone", except Claude won't press send until you say so.</text>
 
   <!-- workflow line -->
-  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" fill="#6F6A63">csv in  →  claude drafts  →  you review  →  you press send</text>
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" fill="#6F6A63">csv in  →  claude drafts  →  you review  →  you say send</text>
 
   <!-- dotted flight path -->
   <path d="M520 332 C 680 336 790 300 868 244" stroke="#4A453F" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" fill="none"/>

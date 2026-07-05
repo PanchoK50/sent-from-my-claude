@@ -2,7 +2,7 @@
   "name": "sent-from-my-claude",
   "private": true,
   "type": "module",
-  "description": "Cold outreach drafted by Claude, sent by you. Every single one.",
+  "description": "Cold outreach drafted by Claude, sent by you.",
   "scripts": {
     "ui": "tsx serve.ts",
     "generate": "tsx generate.ts",
