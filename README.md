@@ -51,14 +51,14 @@ claude
 
 Then, inside Claude Code:
 
-1. **`/outreach-setup`** — Claude interviews you (name, mail provider,
+1. **`/outreach-setup`**: Claude interviews you (name, mail provider,
    signature, what your project is), writes your config, and verifies your
    mailbox connection. One-time, ~5 minutes. The only manual step: putting
    your mail password in `senders/<you>.env` (gitignored; Gmail needs an
    [App Password](https://myaccount.google.com/apppasswords)).
 2. Drop a CSV of contacts anywhere in the folder. Rich exports (Apollo,
    LinkedIn tools) or a bare `First Name, Email` list both work.
-3. **`/outreach my-contacts.csv`** — answer ~3 questions (which sender, which
+3. **`/outreach my-contacts.csv`**: answer ~3 questions (which sender, which
    message, what to call the wave). Claude preps everything and stops.
 4. Run the command it gives you, e.g. `CAMPAIGN=2026-07-wave-1 npm run ui`,
    open http://localhost:3333, review each email, edit inline if you want,
