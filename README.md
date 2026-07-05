@@ -142,6 +142,16 @@ draft the PR, a human reviews and merges it.
 
 [![Contributors](https://contrib.rocks/image?repo=PanchoK50/sent-from-my-claude)](https://github.com/PanchoK50/sent-from-my-claude/graphs/contributors)
 
+## Star history
+
+<a href="https://star-history.com/#PanchoK50/sent-from-my-claude&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PanchoK50/sent-from-my-claude&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PanchoK50/sent-from-my-claude&type=Date" />
+   <img alt="Star history chart for sent-from-my-claude" src="https://api.star-history.com/svg?repos=PanchoK50/sent-from-my-claude&type=Date" />
+ </picture>
+</a>
+
 ## FAQ
 
 **What providers does this work with?** Honest answer: it has only been
