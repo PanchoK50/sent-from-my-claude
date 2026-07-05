@@ -10,10 +10,17 @@ Ask Claude to set this up for you (`/outreach-setup`), or do it by hand:
 Copy `example.env` to `<name>.env` (e.g. `francisco.env`) and fill in your
 mailbox settings. Real `.env` files are gitignored; never commit them.
 
-- **Gmail:** enable 2FA, then create an [App Password](https://myaccount.google.com/apppasswords)
-  and use it as `SMTP_PASSWORD`. Host `smtp.gmail.com`, port 587.
-- **Outlook / Office 365:** host `smtp-mail.outlook.com` (or `smtp.office365.com`), port 587.
-- **University or work mailbox:** search "`<your university>` smtp settings" or ask IT.
+**What's actually tested:** this kit has only ever been run against university
+mailboxes, specifically TUM's mail infrastructure (LRZ), where it works well
+with a plain SMTP login. Find your own university's settings by searching
+"`<your university>` smtp settings" or asking IT.
+
+**Untested / future work:** Gmail, Yahoo, Outlook, and other consumer
+providers. Any mailbox that allows a plain SMTP login should work in
+principle, but nobody has verified one yet. If you get a provider working,
+please open a PR documenting the settings. (Heads-up for that future work:
+Microsoft mailboxes no longer allow password-based SMTP at all, so they will
+need OAuth2 support in the mailer.)
 
 Verify without sending anything:
 

@@ -55,8 +55,10 @@ Keep the PR to one focused change; open two PRs rather than one mixed one.
   Google Sheets, HubSpot, Attio... An adapter is markdown instructions, no
   code needed, but it must cover both `dedup` and `record` and include a
   Configuration section.
-- **Provider presets:** SMTP/IMAP settings for more providers in
-  `senders/example.env` and `senders/README.md`.
+- **Email provider support:** the kit is only tested against university (TUM
+  via LRZ) mail so far. Verified, documented settings for Gmail, Yahoo, or
+  others would be great PRs, as would OAuth2 support in `mailer.ts` for
+  Microsoft mailboxes (which no longer allow password-based SMTP).
 - **Review UI improvements:** `serve.ts` is intentionally a single file with
   zero frontend dependencies. Improvements welcome within that constraint
   (keyboard navigation, bulk edit, diff view against the template...).

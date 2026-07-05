@@ -38,7 +38,9 @@ sent-log.csv / your CRM  ──►  next wave dedups automatically
 
 - [Claude Code](https://claude.com/claude-code)
 - Node.js 20+
-- An email account you can send from (Gmail, Outlook, university, work)
+- An email account that allows password-based SMTP. Only tested with
+  university mail (TUM via LRZ) so far; other providers are future work, see
+  `senders/README.md`
 
 ## Quickstart
 
@@ -54,8 +56,7 @@ Then, inside Claude Code:
 1. **`/outreach-setup`**: Claude interviews you (name, mail provider,
    signature, what your project is), writes your config, and verifies your
    mailbox connection. One-time, ~5 minutes. The only manual step: putting
-   your mail password in `senders/<you>.env` (gitignored; Gmail needs an
-   [App Password](https://myaccount.google.com/apppasswords)).
+   your mail password in `senders/<you>.env` (the file is gitignored).
 2. Drop a CSV of contacts anywhere in the folder. Rich exports (Apollo,
    LinkedIn tools) or a bare `First Name, Email` list both work.
 3. **`/outreach my-contacts.csv`**: answer ~3 questions (which sender, which
@@ -139,8 +140,11 @@ draft the PR, a human reviews and merges it.
 
 ## FAQ
 
-**Gmail says my password is wrong.** You need an App Password (requires 2FA):
-https://myaccount.google.com/apppasswords. Your normal password won't work.
+**What providers does this work with?** Honest answer: it has only been
+tested with TUM university mailboxes (LRZ SMTP). Any mailbox that allows a
+plain SMTP login should work in principle; Gmail, Outlook, and the other big
+providers are untested and on the future-work list. If you get one working,
+a PR documenting it would be very welcome.
 
 **Can it send automatically / on a schedule?** No, and that's the point. Cold
 outreach that works is reviewed outreach. If you want drip campaigns, use a

@@ -14,11 +14,12 @@ Ask for:
 
 1. **Name + email address** they will send from, and a short sender handle
    (e.g. "francisco" → `senders/francisco.env`).
-2. **Mail provider** — Gmail, Outlook, university/work, or other. This
-   determines SMTP/IMAP hosts (cheatsheet in `senders/example.env` and
-   `senders/README.md`). For Gmail, tell them they need an App Password
-   (https://myaccount.google.com/apppasswords) and that their normal password
-   will not work.
+2. **Mail provider** — which mailbox they will send from. Be upfront about
+   support status (see `senders/README.md`): only university mailboxes (TUM
+   via LRZ) are tested; other providers are untested future work, and
+   Microsoft mailboxes are known not to work (no password-based SMTP). Help
+   them find their provider's SMTP/IMAP settings, then verify with
+   `npm run check`.
 3. **Signature** — paste their existing email signature (or the name, role,
    org, links to build one from).
 4. **Their project, in 2-3 sentences** — who they are, what they're working on,
@@ -49,9 +50,10 @@ Ask for:
 npm run check -- <handle>
 ```
 
-If SMTP fails: most common causes are normal-password-instead-of-app-password
-(Gmail/Yahoo), wrong host, or a university blocking external SMTP. Help them
-debug; `senders/README.md` has the cheatsheet.
+If SMTP fails: most common causes are a wrong host or port, a provider that
+does not accept plain password logins (some require app passwords or OAuth2),
+or a university blocking SMTP from outside its network. Help them debug;
+`senders/README.md` has the support status per provider.
 
 ## 4. Suggest a dry run
 
