@@ -1,0 +1,52 @@
+<svg width="1280" height="360" viewBox="0 0 1280 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="sent-from-my-claude: drafted by Claude, sent by you">
+  <title>sent-from-my-claude</title>
+
+  <!-- background -->
+  <rect x="1" y="1" width="1278" height="358" rx="24" fill="#191817" stroke="#2E2C29" stroke-width="2"/>
+
+  <!-- envelope icon -->
+  <g stroke="#D97757" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="72" y="70" width="56" height="42" rx="7"/>
+    <path d="M75 75 L100 98 L125 75"/>
+  </g>
+
+  <!-- title -->
+  <text x="148" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="54" font-weight="700" fill="#F0EDE6">sent-from-my-claude</text>
+
+  <!-- tagline -->
+  <text x="72" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="27" font-weight="600" fill="#D97757">Drafted by Claude. Sent by you. Every single one.</text>
+
+  <!-- joke line -->
+  <text x="72" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-style="italic" fill="#A8A29A">Like "sent from my iPhone", except Claude isn't allowed to press send.</text>
+
+  <!-- workflow line -->
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" fill="#6F6A63">csv in  →  claude drafts  →  you review  →  you press send</text>
+
+  <!-- dotted flight path -->
+  <path d="M520 332 C 680 336 790 300 868 244" stroke="#4A453F" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" fill="none"/>
+
+  <!-- paper plane -->
+  <g transform="translate(852,222) rotate(-35)">
+    <polygon points="0,18 40,0 16,30" fill="#D97757"/>
+    <polygon points="16,30 40,0 20,15" fill="#A85A3F"/>
+  </g>
+
+  <!-- email window card -->
+  <g transform="translate(915,78)">
+    <rect x="6" y="8" width="285" height="204" rx="16" fill="#000000" opacity="0.3"/>
+    <rect x="0" y="0" width="285" height="204" rx="16" fill="#FBFAF7"/>
+    <circle cx="26" cy="26" r="6" fill="#FF5F57"/>
+    <circle cx="48" cy="26" r="6" fill="#FEBC2E"/>
+    <circle cx="70" cy="26" r="6" fill="#28C840"/>
+    <line x1="16" y1="46" x2="269" y2="46" stroke="#E7E4DD" stroke-width="2"/>
+    <text x="22" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="16" font-weight="700" fill="#44403C">Hope this finds you well</text>
+    <rect x="22" y="96" width="210" height="9" rx="4" fill="#E7E5E1"/>
+    <rect x="22" y="114" width="240" height="9" rx="4" fill="#E7E5E1"/>
+    <rect x="22" y="132" width="160" height="9" rx="4" fill="#E7E5E1"/>
+    <rect x="22" y="156" width="92" height="34" rx="9" fill="#16A34A"/>
+    <text x="68" y="179" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Send</text>
+    <g transform="translate(102,178) scale(1.3)">
+      <path d="M0,0 L0,17 L4.7,13.2 L8,20.5 L11,19.2 L7.7,12 L14,12 Z" fill="#1C1917" stroke="#FFFFFF" stroke-width="1.4" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

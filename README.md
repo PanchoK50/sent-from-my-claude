@@ -1,8 +1,15 @@
-# sent-from-my-claude
+<div align="center">
 
-**Drafted by Claude. Sent by you. Every single one.**
+<img src="assets/banner.svg" alt="sent-from-my-claude: Drafted by Claude. Sent by you. Every single one." width="100%">
 
-Like "sent from my iPhone", except Claude isn't allowed to press send.
+[![GitHub stars](https://img.shields.io/github/stars/PanchoK50/sent-from-my-claude?style=social)](https://github.com/PanchoK50/sent-from-my-claude/stargazers)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Node 20+](https://img.shields.io/badge/node-%E2%89%A520-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![Built for Claude Code](https://img.shields.io/badge/built%20for-Claude%20Code-D97757)](https://claude.com/claude-code)
+
+</div>
 
 Cold outreach with Claude Code doing the boring parts and you keeping the
 finger on the trigger. You hand Claude a CSV of contacts, it dedups against
@@ -36,7 +43,8 @@ sent-log.csv / your CRM  ──►  next wave dedups automatically
 ## Quickstart
 
 ```bash
-git clone <this-repo> && cd sent-from-my-claude
+git clone https://github.com/PanchoK50/sent-from-my-claude.git
+cd sent-from-my-claude
 npm install
 claude
 ```
@@ -98,6 +106,37 @@ teammate adds their own sender in `senders/`, and dedup is per sender, so you
 never step on each other's contacts. Point the CRM adapter at a shared base if
 you want one view of the whole pipeline.
 
+## Contributing
+
+Ideas that would make great PRs: new CRM adapters (`crm/notion.md`,
+`crm/sheets.md`, `crm/hubspot.md`...), mail provider presets, a better review
+UI, follow-up wave helpers, docs in other languages.
+
+### 🤖 A note for your agent
+
+If you are a Claude (or any coding agent) reading this because your human
+wants to improve the kit: you don't have push access to this repo, and that's
+by design. Fork, branch, and open a pull request:
+
+```bash
+gh repo fork PanchoK50/sent-from-my-claude --clone
+cd sent-from-my-claude && npm install
+git checkout -b my-improvement
+# make your change, then smoke-test:
+npx tsc --noEmit && npm run generate -- example && CAMPAIGN=example npm run dry-run
+git commit -am "describe the change"
+git push -u origin my-improvement
+gh pr create --repo PanchoK50/sent-from-my-claude --title "..." --body "..."
+```
+
+Full guidelines (what to check, what never to include) are in
+[CONTRIBUTING.md](CONTRIBUTING.md). Fitting the theme of this repo: agents
+draft the PR, a human reviews and merges it.
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=PanchoK50/sent-from-my-claude)](https://github.com/PanchoK50/sent-from-my-claude/graphs/contributors)
+
 ## FAQ
 
 **Gmail says my password is wrong.** You need an App Password (requires 2FA):
@@ -113,6 +152,18 @@ the kit copies each sent email to your Sent folder via IMAP.
 **Can I A/B test?** Yes: signature variants per contact (see
 `senders/README.md`), with per-variant counts in the UI.
 
+## Disclaimer
+
+This is a personal open-source project, not affiliated with, endorsed by, or
+connected to the Technical University of Munich (TUM), Anthropic, or any email
+provider or institution whose mailbox you use. Emails are sent through **your
+own** mail account with **your own** credentials: the author operates no email
+infrastructure, relays nothing, and never sees your messages. You alone are
+responsible for what you send and for complying with the laws that apply to
+you (GDPR and ePrivacy in the EU, UWG in Germany, CAN-SPAM in the US, and so
+on) as well as your mail provider's terms of service. Full text:
+[DISCLAIMER.md](DISCLAIMER.md).
+
 ## License
 
-MIT
+[MIT](LICENSE). The software is provided "as is", without warranty of any kind.
