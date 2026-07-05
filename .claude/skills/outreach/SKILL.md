@@ -1,14 +1,16 @@
 ---
 name: outreach
-description: Start a new outreach campaign from a CSV of contacts. Use when the user types /outreach, says "new campaign", or provides a CSV of people to email. Parses contacts, dedups against the sent log and the configured CRM, generates one reviewable email draft per contact, then hands over the local review UI. Never sends emails.
+description: Start a new outreach campaign from a CSV of contacts. Use when the user types /outreach, says "new campaign", or provides a CSV of people to email. Parses contacts, dedups against the sent log and the configured CRM, generates one reviewable email draft per contact, then hands over the local review UI. Never sends without the user's explicit post-review instruction.
 ---
 
 # New outreach campaign
 
-Golden rule: **you never send anything.** You prepare everything up to the
-review UI and stop. The user reviews each email in the UI and sends it
-themselves. Do not run `send.ts`, do not call `/api/send`, do not "helpfully"
-send a test email.
+Golden rule: **nothing is sent without the user's explicit, post-review go.**
+You prepare everything up to the review UI and stop. Do not run `send.ts`, do
+not call `/api/send`, do not "helpfully" send a test email. The single
+exception: after the user has reviewed the drafts, they may explicitly tell
+you to send the batch; that flow is step 8, and the explicit instruction is
+the only trigger.
 
 ## 0. Preconditions
 
@@ -91,10 +93,27 @@ Give the user exactly this and nothing else to run:
 CAMPAIGN=<campaign-folder> npm run ui
 ```
 
-Then stop. Nothing is sent. Do not open the UI's send endpoint yourself.
+Then stop. Nothing is sent yet. The user now reviews, and either sends each
+email themselves in the UI or comes back and tells you to send the batch.
 
-## 8. After the user says they've sent
+## 8. Batch send (only on explicit command)
 
-Run the active adapter's `record` instructions (the send scripts already
-appended to `sent-log.csv` automatically). Report what was recorded so the next
-wave's dedup works.
+If, and only if, the user explicitly tells you to send after reviewing
+("looks good, send them all"):
+
+```bash
+CAMPAIGN=<campaign-folder> npm run send-all
+```
+
+Details that make this safe: emails already sent from the UI are skipped
+(`sent_at` is set), edits saved in the UI are picked up (the UI writes back to
+the JSON files), and the sender waits `EMAIL_DELAY_MS` between emails. If it
+is ambiguous whether the user actually reviewed, ask first; when in doubt, run
+`npm run dry-run` and show the summary before sending. Never treat "generate",
+"prepare", or silence as permission to send.
+
+## 9. After the wave is sent
+
+Whichever way it was sent, run the active adapter's `record` instructions (the
+send scripts already appended to `sent-log.csv` automatically). Report what
+was recorded so the next wave's dedup works.

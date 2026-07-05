@@ -1,13 +1,17 @@
 # sent-from-my-claude
 
-Cold outreach drafted by Claude, sent by a human: CSV in, personalized drafts
-out, the user reviews and sends every single email.
+Cold outreach drafted by Claude, sent on a human's go: CSV in, personalized
+drafts out, the user reviews every single email before anything is sent.
 
 ## Golden rules
 
-1. **Never send an email.** Not via `send.ts`, not via the UI's API, not "just
-   a test". Claude prepares drafts; the human reviews and presses Send in the
-   UI. No exceptions, ever.
+1. **Never send without an explicit, post-review go.** Claude never sends on
+   its own initiative: no test emails, no "sending the rest", no calling
+   `/api/send` or running `send.ts` unprompted. Exactly two sanctioned ways to
+   send, both triggered by the human: they press Send per email in the review
+   UI, or, after reviewing the drafts, they explicitly tell Claude to batch
+   send (`CAMPAIGN=<campaign> npm run send-all`). "Generate" or "prepare" is
+   never permission to send.
 2. **Never commit or print credentials.** `senders/*.env` files are gitignored
    and stay that way.
 3. **Dedup before drafting.** Nobody should get the same pitch twice. The
@@ -27,8 +31,8 @@ out, the user reviews and sends every single email.
 | `templates/` | message templates with voice rules |
 | `crm/` | pluggable dedup/record adapters; `config.md` names the active one |
 | `generate.ts` | contacts + campaign + signature → `emails/*.json` (never sends) |
-| `serve.ts` | local review UI; the ONLY place emails get sent, by the human |
-| `send.ts` | CLI batch sender (human-run only; `--dry-run` is safe) |
+| `serve.ts` | local review UI; the human reviews, edits, and can send per email |
+| `send.ts` | CLI batch sender; run it ONLY on the user's explicit post-review instruction (`--dry-run` is always safe; already-sent emails are skipped) |
 | `check.ts` | verify a sender's SMTP/IMAP creds without sending |
 | `sent-log.csv` | append-only log of every sent email (written automatically) |
 
@@ -39,6 +43,7 @@ npm run check -- <sender>            # verify mailbox creds
 npm run generate -- <campaign>       # (re)build emails/*.json for a campaign
 CAMPAIGN=<campaign> npm run ui       # review & send UI at localhost:3333
 CAMPAIGN=<campaign> npm run dry-run  # preview what would be sent, sends nothing
+CAMPAIGN=<campaign> npm run send-all # batch send; ONLY after review + explicit user go
 ```
 
 ## Writing style for emails

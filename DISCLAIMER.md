@@ -59,7 +59,7 @@ of this software, as set out in the [MIT License](LICENSE).
 ## 5. Intended use
 
 This tool is built for small-batch, personalized, human-reviewed outreach: a
-person reads and individually approves every email before it is sent. It is
+person reviews every email before it is sent. It is
 not built for, and must not be used for, bulk unsolicited email (spam),
 harassment, deception, or any unlawful purpose.
 

@@ -37,8 +37,10 @@ Keep the PR to one focused change; open two PRs rather than one mixed one.
 ## Rules every PR must respect
 
 1. **The golden rule is not negotiable.** Nothing in this kit may ever send an
-   email without a human explicitly triggering that specific email. PRs that
-   add auto-sending, scheduling, or "send all without review" will be closed.
+   email the human has not reviewed, and nothing sends without an explicit
+   human trigger (per-email in the UI, or a post-review batch-send command).
+   PRs that add auto-sending, scheduling, or sending without review will be
+   closed.
 2. **No real people, no secrets.** No real names, email addresses, contact
    lists, credentials, or API keys anywhere, including in tests, examples,
    fixtures, and commit history. Example data stays obviously fictional

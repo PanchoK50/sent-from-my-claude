@@ -1,8 +1,9 @@
 # Outreach Campaigns — Runbook
 
 How to run a new outreach wave. The golden rule: **nothing is ever sent
-automatically.** Claude prepares everything up to the review UI and stops. You
-review each email and send it yourself.
+unreviewed.** Claude prepares everything up to the review UI and stops. You
+review every email; sending happens only on your explicit go, either per email
+in the UI or by telling Claude to send the reviewed batch.
 
 ## Start a new wave (what you do)
 
@@ -45,6 +46,12 @@ Open http://localhost:3333, read every email, edit inline if needed (the email
 body is directly editable, Ctrl+S saves), send per contact once you OK it.
 Sent emails are marked, logged to `sent-log.csv`, and copied to your mailbox's
 Sent folder if IMAP is configured.
+
+**Prefer to batch?** Review everything first (in the UI or straight in the
+`emails/*.json` files), then tell Claude "send them all". Claude runs the
+batch sender: it skips anything you already sent from the UI, picks up edits
+you saved there, waits `EMAIL_DELAY_MS` between emails, and logs every send.
+Claude never does this unprompted; the explicit instruction is the trigger.
 
 ## After you've sent
 

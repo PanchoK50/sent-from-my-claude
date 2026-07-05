@@ -14,8 +14,9 @@
 Cold outreach with Claude Code doing the boring parts and you keeping the
 finger on the trigger. You hand Claude a CSV of contacts, it dedups against
 everyone you already emailed, drafts one personalized email per person in your
-voice and with your signature, and opens a local review UI. **You read every
-email and press Send yourself.** Nothing ever goes out automatically.
+voice and with your signature, and opens a local review UI. **You review every
+email before it goes out.** Send them one by one in the UI, or tell Claude to
+send the whole reviewed batch. Either way, nothing goes out without your go.
 
 Built for customer discovery interviews (student startup projects, user
 research), works for any small-batch, high-quality outreach where every email
@@ -63,15 +64,18 @@ Then, inside Claude Code:
    message, what to call the wave). Claude preps everything and stops.
 4. Run the command it gives you, e.g. `CAMPAIGN=2026-07-wave-1 npm run ui`,
    open http://localhost:3333, review each email, edit inline if you want,
-   and send one by one.
+   and send one by one. Or, once you've reviewed everything, tell Claude
+   "send them all" and it batch-sends the reviewed campaign for you.
 
 Try it right now without any setup: `CAMPAIGN=example npm run dry-run` shows
 what a send would look like using the bundled fake campaign.
 
 ## The rules the kit enforces
 
-- **Human sends, always.** Claude is instructed (CLAUDE.md + skills) to stop at
-  the review UI. The send button is yours.
+- **Human reviews, always.** Claude is instructed (CLAUDE.md + skills) to stop
+  at the review UI. Emails go out only on your explicit go: the Send button
+  per email, or a direct "send them all" to Claude after you've reviewed.
+  Claude never sends on its own initiative.
 - **No double-contacting.** Every sent email lands in `sent-log.csv`; the next
   wave drops anyone the same sender already emailed. Follow-ups to the same
   people are possible, but only when you explicitly ask.
@@ -146,9 +150,11 @@ plain SMTP login should work in principle; Gmail, Outlook, and the other big
 providers are untested and on the future-work list. If you get one working,
 a PR documenting it would be very welcome.
 
-**Can it send automatically / on a schedule?** No, and that's the point. Cold
-outreach that works is reviewed outreach. If you want drip campaigns, use a
-marketing tool.
+**Can it send automatically / on a schedule?** There's no scheduler and Claude
+never sends on its own initiative; that's the point. What it can do: after
+you've reviewed a campaign, tell Claude to send the batch and it fires them
+off with a polite delay between emails. The trigger is always you. If you want
+drip campaigns, use a marketing tool.
 
 **Emails don't show in my Sent folder.** Set `IMAP_HOST` in your sender `.env`;
 the kit copies each sent email to your Sent folder via IMAP.
