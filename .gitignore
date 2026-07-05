@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Secrets: real sender credentials never leave this machine
+senders/*.env
+!senders/example.env
+.env
+.env.*
+
+# Personal data: real campaigns, contact lists, and the send history stay local
+campaigns/*
+!campaigns/example
+sent-log.csv
+/*.csv
+
+# Real signatures and templates are personal; commit them in your own fork if you want
+senders/*.signature.txt
+senders/*.signature.html
+!senders/example.signature.txt
+!senders/example.signature.html
+
+# Local tooling
+.claude/settings.local.json
+.DS_Store

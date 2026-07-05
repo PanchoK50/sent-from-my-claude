@@ -1,0 +1,24 @@
+{
+  "name": "sent-from-my-claude",
+  "private": true,
+  "type": "module",
+  "description": "Cold outreach drafted by Claude, sent by you. Every single one.",
+  "scripts": {
+    "ui": "tsx serve.ts",
+    "generate": "tsx generate.ts",
+    "check": "tsx check.ts",
+    "send": "tsx send.ts",
+    "send-all": "tsx send.ts --all",
+    "dry-run": "tsx send.ts --all --dry-run"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "imapflow": "^1.0.164",
+    "nodemailer": "^6.9.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^6.4.15",
+    "tsx": "^4.19.0"
+  }
+}

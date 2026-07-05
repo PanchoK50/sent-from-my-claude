@@ -1,0 +1,21 @@
+[
+  {
+    "first_name": "Maria",
+    "last_name": "Muster",
+    "company": "Acme Foods",
+    "email": "maria.muster@acme-foods.example",
+    "custom_line": "Because of your experience running supplier audits at Acme Foods, I would love to hear how you decide who makes the cut."
+  },
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "Beta Ingredients",
+    "email": "john.doe@beta-ingredients.example"
+  },
+  {
+    "first_name": "",
+    "last_name": "",
+    "company": "",
+    "email": "procurement@gamma-mills.example"
+  }
+]

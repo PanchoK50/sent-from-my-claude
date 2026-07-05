@@ -1,0 +1,13 @@
+{
+  "to": "john.doe@beta-ingredients.example",
+  "cc": "",
+  "subject": "Student research project - quick chat?",
+  "body": "Hi John!\n\nI'm Ada, a student working on a research project about how mid-size food producers decide which suppliers to trust. We're talking to people who deal with this every week to understand what actually works and what doesn't.\n\nWould you have 20 minutes in the next two weeks for a quick call?\n\nBest,\nAda Lovelace\nAnalytical Engine Research Group\nada@example.com\nlinkedin.com/in/ada-lovelace",
+  "html_body": "<div style=\"font-family: Calibri, sans-serif; font-size: 11pt;\">\n<p>Hi John!</p>\n<p>I&#x27;m Ada, a student working on a research project about how mid-size food producers decide which suppliers to trust. We&#x27;re talking to people who deal with this every week to understand what actually works and what doesn&#x27;t.</p>\n<p>Would you have 20 minutes in the next two weeks for a quick call?</p>\n<p>Best,</p>\n<div><span style=\"color:rgb(0,0,0);font-family:Calibri, sans-serif;font-size:10pt;\"><strong>Ada Lovelace</strong></span></div>\n<div><span style=\"color:rgb(0,0,0);font-family:Calibri, sans-serif;font-size:9pt;\">Analytical Engine Research Group</span></div>\n<div><a href=\"mailto:ada@example.com\"><span style=\"color:rgb(17,85,204);font-family:Calibri, sans-serif;font-size:9pt;\"><u>ada@example.com</u></span></a></div>\n<div><a href=\"https://www.linkedin.com/in/ada-lovelace/\"><span style=\"color:rgb(17,85,204);font-family:Calibri, sans-serif;font-size:9pt;\"><u>linkedin.com/in/ada-lovelace</u></span></a></div>\n</div>",
+  "contact": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "Beta Ingredients",
+    "email": "john.doe@beta-ingredients.example"
+  }
+}
