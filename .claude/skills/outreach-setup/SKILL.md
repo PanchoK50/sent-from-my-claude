@@ -20,6 +20,14 @@ Ask for:
    Microsoft mailboxes are known not to work (no password-based SMTP). Help
    them find their provider's SMTP/IMAP settings, then verify with
    `npm run check`.
+
+   **If it's a TUM / LRZ mailbox (`@tum.de`):** use `SMTP_HOST=postout.lrz.de`
+   (port 587) and `IMAP_HOST=xmail.mwn.de` (port 993). Critically, the username
+   for *both* is the user's **LRZ Kennung** (a short id like `ab12cde`), NOT
+   their `@tum.de` email address. Ask for the Kennung explicitly and put it in
+   `SMTP_USER` (IMAP inherits it). A wrong username here is the usual cause of
+   SMTP working but IMAP failing with `AUTHENTICATIONFAILED` — which is a login
+   mistake, not an Exchange limitation, so do not disable IMAP over it.
 3. **Signature** — paste their existing email signature (or the name, role,
    org, links to build one from).
 4. **Their project, in 2-3 sentences** — who they are, what they're working on,

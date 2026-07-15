@@ -15,6 +15,25 @@ mailboxes, specifically TUM's mail infrastructure (LRZ), where it works well
 with a plain SMTP login. Find your own university's settings by searching
 "`<your university>` smtp settings" or asking IT.
 
+**TUM / LRZ settings (copy-paste):**
+
+```
+SMTP_HOST=postout.lrz.de
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=<your LRZ Kennung>      # e.g. ab12cde — NOT your @tum.de email
+IMAP_HOST=xmail.mwn.de
+IMAP_PORT=993
+# IMAP inherits SMTP_USER / SMTP_PASSWORD, so no IMAP_USER/PASSWORD needed
+```
+
+The one thing that trips people up: LRZ authenticates with your **LRZ Kennung**
+(a short id like `ab12cde`), not your `@tum.de` email address, for *both* SMTP
+and IMAP. If `npm run check` shows SMTP OK but IMAP `AUTHENTICATIONFAILED`, you
+almost certainly have the email address in the username slot. `xmail.mwn.de` is
+TUM's Exchange server and copies sent mail over IMAP correctly with the Kennung;
+Exchange is not a limitation here.
+
 **Untested / future work:** Gmail, Yahoo, Outlook, and other consumer
 providers. Any mailbox that allows a plain SMTP login should work in
 principle, but nobody has verified one yet. If you get a provider working,
